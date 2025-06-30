@@ -1,0 +1,42 @@
+{
+  "kind": "collectionType",
+  "collectionName": "sermones",
+  "info": {
+    "singularName": "sermone",
+    "pluralName": "sermones",
+    "displayName": "Sermone",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "titulo": {
+      "type": "string"
+    },
+    "descripcion": {
+      "type": "string"
+    },
+    "url_youtube": {
+      "type": "string"
+    },
+    "url_facebook": {
+      "type": "string"
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "facebook",
+        "youtube"
+      ],
+      "default": "facebook",
+      "required": true
+    },
+    "activo": {
+      "type": "boolean",
+      "default": true,
+      "required": true
+    }
+  }
+}
