@@ -793,7 +793,7 @@ export interface ApiBlogBlog extends Schema.CollectionType {
   info: {
     singularName: 'blog';
     pluralName: 'blogs';
-    displayName: 'blog';
+    displayName: 'Blog';
     description: '';
   };
   options: {
@@ -805,12 +805,12 @@ export interface ApiBlogBlog extends Schema.CollectionType {
     description: Attribute.Text & Attribute.Required;
     image: Attribute.Media<'images' | 'files' | 'videos' | 'audios'> &
       Attribute.Required;
-    content: Attribute.Blocks;
     category: Attribute.Relation<
       'api::blog.blog',
       'manyToOne',
       'api::category.category'
     >;
+    content: Attribute.RichText;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -871,11 +871,11 @@ export interface ApiEventoEvento extends Schema.CollectionType {
   };
   attributes: {
     name: Attribute.String;
-    descriptions: Attribute.Text;
     imagem: Attribute.Media<'images' | 'files' | 'videos' | 'audios', true>;
     data_inicio: Attribute.DateTime;
     localizacao: Attribute.String;
     status: Attribute.Boolean;
+    descriptions: Attribute.RichText;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

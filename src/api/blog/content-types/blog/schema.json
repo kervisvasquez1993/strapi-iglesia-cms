@@ -4,7 +4,7 @@
   "info": {
     "singularName": "blog",
     "pluralName": "blogs",
-    "displayName": "blog",
+    "displayName": "Blog",
     "description": ""
   },
   "options": {
@@ -35,14 +35,14 @@
         "audios"
       ]
     },
-    "content": {
-      "type": "blocks"
-    },
     "category": {
       "type": "relation",
       "relation": "manyToOne",
       "target": "api::category.category",
       "inversedBy": "blogs"
+    },
+    "content": {
+      "type": "richtext"
     }
   }
 }

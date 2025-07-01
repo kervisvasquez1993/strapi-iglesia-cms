@@ -15,9 +15,6 @@
     "name": {
       "type": "string"
     },
-    "descriptions": {
-      "type": "text"
-    },
     "imagem": {
       "type": "media",
       "multiple": true,
@@ -37,6 +34,9 @@
     },
     "status": {
       "type": "boolean"
+    },
+    "descriptions": {
+      "type": "richtext"
     }
   }
 }
