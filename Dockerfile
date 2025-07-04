@@ -17,7 +17,7 @@ COPY . .
 RUN chown -R node:node /opt/app
 USER node
 RUN ["npm", "run", "build"]
-EXPOSE 1337
+EXPOSE 3000
 
 # Comando condicional basado en NODE_ENV
 CMD ["sh", "-c", "if [ \"$NODE_ENV\" = \"production\" ]; then npm run start; else npm run develop; fi"]
