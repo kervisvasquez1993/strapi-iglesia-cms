@@ -876,6 +876,7 @@ export interface ApiEventoEvento extends Schema.CollectionType {
     localizacao: Attribute.String;
     status: Attribute.Boolean;
     descriptions: Attribute.RichText;
+    slug: Attribute.UID<'api::evento.evento', 'name'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

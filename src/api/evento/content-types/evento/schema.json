@@ -37,6 +37,10 @@
     },
     "descriptions": {
       "type": "richtext"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "name"
     }
   }
 }
