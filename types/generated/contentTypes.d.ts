@@ -914,7 +914,7 @@ export interface ApiSermoneSermone extends Schema.CollectionType {
       Attribute.Required &
       Attribute.DefaultTo<'facebook'>;
     activo: Attribute.Boolean & Attribute.Required & Attribute.DefaultTo<true>;
-    descriptions: Attribute.RichText & Attribute.Required;
+    contents: Attribute.RichText & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
