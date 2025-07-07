@@ -15,9 +15,6 @@
     "titulo": {
       "type": "string"
     },
-    "descripcion": {
-      "type": "string"
-    },
     "url_youtube": {
       "type": "string"
     },
@@ -36,6 +33,10 @@
     "activo": {
       "type": "boolean",
       "default": true,
+      "required": true
+    },
+    "descriptions": {
+      "type": "richtext",
       "required": true
     }
   }

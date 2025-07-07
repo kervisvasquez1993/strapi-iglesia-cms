@@ -908,13 +908,13 @@ export interface ApiSermoneSermone extends Schema.CollectionType {
   };
   attributes: {
     titulo: Attribute.String;
-    descripcion: Attribute.String;
     url_youtube: Attribute.String;
     url_facebook: Attribute.String;
     type: Attribute.Enumeration<['facebook', 'youtube']> &
       Attribute.Required &
       Attribute.DefaultTo<'facebook'>;
     activo: Attribute.Boolean & Attribute.Required & Attribute.DefaultTo<true>;
+    descriptions: Attribute.RichText & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
