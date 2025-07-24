@@ -1,0 +1,36 @@
+{
+  "kind": "collectionType",
+  "collectionName": "nossa_comunidades",
+  "info": {
+    "singularName": "nossa-comunidade",
+    "pluralName": "nossa-comunidades",
+    "displayName": "Nossa Comunidade",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "description": {
+      "type": "blocks"
+    },
+    "rank": {
+      "type": "integer"
+    }
+  }
+}

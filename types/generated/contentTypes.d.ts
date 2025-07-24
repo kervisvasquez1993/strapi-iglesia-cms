@@ -897,6 +897,41 @@ export interface ApiEventoEvento extends Schema.CollectionType {
   };
 }
 
+export interface ApiNossaComunidadeNossaComunidade
+  extends Schema.CollectionType {
+  collectionName: 'nossa_comunidades';
+  info: {
+    singularName: 'nossa-comunidade';
+    pluralName: 'nossa-comunidades';
+    displayName: 'Nossa Comunidade';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    name: Attribute.String;
+    image: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    description: Attribute.Blocks;
+    rank: Attribute.Integer;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::nossa-comunidade.nossa-comunidade',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::nossa-comunidade.nossa-comunidade',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiSermoneSermone extends Schema.CollectionType {
   collectionName: 'sermones';
   info: {
@@ -935,6 +970,68 @@ export interface ApiSermoneSermone extends Schema.CollectionType {
   };
 }
 
+export interface ApiTestemunhoTestemunho extends Schema.CollectionType {
+  collectionName: 'testemunhos';
+  info: {
+    singularName: 'testemunho';
+    pluralName: 'testemunhos';
+    displayName: 'Testemunho';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    description: Attribute.RichText & Attribute.Required;
+    name: Attribute.String & Attribute.Required;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::testemunho.testemunho',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::testemunho.testemunho',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiVersiculoDoDiaVersiculoDoDia extends Schema.SingleType {
+  collectionName: 'versiculo_do_dias';
+  info: {
+    singularName: 'versiculo-do-dia';
+    pluralName: 'versiculo-do-dias';
+    displayName: 'versiculo-do-dia';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    name: Attribute.String;
+    descriptions: Attribute.RichText & Attribute.Required;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::versiculo-do-dia.versiculo-do-dia',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::versiculo-do-dia.versiculo-do-dia',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface ContentTypes {
@@ -956,7 +1053,10 @@ declare module '@strapi/types' {
       'api::blog.blog': ApiBlogBlog;
       'api::category.category': ApiCategoryCategory;
       'api::evento.evento': ApiEventoEvento;
+      'api::nossa-comunidade.nossa-comunidade': ApiNossaComunidadeNossaComunidade;
       'api::sermone.sermone': ApiSermoneSermone;
+      'api::testemunho.testemunho': ApiTestemunhoTestemunho;
+      'api::versiculo-do-dia.versiculo-do-dia': ApiVersiculoDoDiaVersiculoDoDia;
     }
   }
 }
