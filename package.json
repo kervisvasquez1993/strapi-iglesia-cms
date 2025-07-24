@@ -11,6 +11,7 @@
     "deploy": "strapi deploy"
   },
   "dependencies": {
+    "@retikolo/drag-drop-content-types": "^1.7.1",
     "@strapi/plugin-cloud": "4.25.9",
     "@strapi/plugin-graphql": "^4.25.9",
     "@strapi/plugin-i18n": "4.25.9",

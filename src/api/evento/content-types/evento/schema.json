@@ -41,6 +41,10 @@
     "slug": {
       "type": "uid",
       "targetField": "name"
+    },
+    "rank": {
+      "type": "integer",
+      "required": true
     }
   }
 }

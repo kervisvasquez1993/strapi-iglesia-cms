@@ -811,6 +811,7 @@ export interface ApiBlogBlog extends Schema.CollectionType {
       'api::category.category'
     >;
     content: Attribute.RichText;
+    rank: Attribute.Integer & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -877,6 +878,7 @@ export interface ApiEventoEvento extends Schema.CollectionType {
     status: Attribute.Boolean;
     descriptions: Attribute.RichText;
     slug: Attribute.UID<'api::evento.evento', 'name'>;
+    rank: Attribute.Integer & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

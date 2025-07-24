@@ -43,6 +43,10 @@
     },
     "content": {
       "type": "richtext"
+    },
+    "rank": {
+      "type": "integer",
+      "required": true
     }
   }
 }
