@@ -45,6 +45,12 @@
     "rank": {
       "type": "integer",
       "required": true
+    },
+    "imagen_eventos": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::imagen-evento.imagen-evento",
+      "mappedBy": "evento"
     }
   }
 }

@@ -879,6 +879,11 @@ export interface ApiEventoEvento extends Schema.CollectionType {
     descriptions: Attribute.RichText;
     slug: Attribute.UID<'api::evento.evento', 'name'>;
     rank: Attribute.Integer & Attribute.Required;
+    imagen_eventos: Attribute.Relation<
+      'api::evento.evento',
+      'oneToMany',
+      'api::imagen-evento.imagen-evento'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -890,6 +895,45 @@ export interface ApiEventoEvento extends Schema.CollectionType {
       Attribute.Private;
     updatedBy: Attribute.Relation<
       'api::evento.evento',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiImagenEventoImagenEvento extends Schema.CollectionType {
+  collectionName: 'imagen_eventos';
+  info: {
+    singularName: 'imagen-evento';
+    pluralName: 'imagen-eventos';
+    displayName: 'imagen-evento';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    evento: Attribute.Relation<
+      'api::imagen-evento.imagen-evento',
+      'manyToOne',
+      'api::evento.evento'
+    >;
+    image: Attribute.Media<'images' | 'files' | 'videos' | 'audios'> &
+      Attribute.Required;
+    titulo: Attribute.String & Attribute.Required;
+    descriptions: Attribute.Blocks;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::imagen-evento.imagen-evento',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::imagen-evento.imagen-evento',
       'oneToOne',
       'admin::user'
     > &
@@ -1057,6 +1101,7 @@ declare module '@strapi/types' {
       'api::blog.blog': ApiBlogBlog;
       'api::category.category': ApiCategoryCategory;
       'api::evento.evento': ApiEventoEvento;
+      'api::imagen-evento.imagen-evento': ApiImagenEventoImagenEvento;
       'api::nossa-comunidade.nossa-comunidade': ApiNossaComunidadeNossaComunidade;
       'api::sermone.sermone': ApiSermoneSermone;
       'api::testemunho.testemunho': ApiTestemunhoTestemunho;

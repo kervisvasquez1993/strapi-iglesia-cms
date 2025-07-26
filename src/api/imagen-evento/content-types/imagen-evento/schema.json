@@ -1,0 +1,40 @@
+{
+  "kind": "collectionType",
+  "collectionName": "imagen_eventos",
+  "info": {
+    "singularName": "imagen-evento",
+    "pluralName": "imagen-eventos",
+    "displayName": "imagen-evento",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "evento": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::evento.evento",
+      "inversedBy": "imagen_eventos"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "titulo": {
+      "type": "string",
+      "required": true
+    },
+    "descriptions": {
+      "type": "blocks"
+    }
+  }
+}
