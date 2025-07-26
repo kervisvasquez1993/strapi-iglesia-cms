@@ -4,7 +4,8 @@
   "info": {
     "singularName": "versiculo-do-dia",
     "pluralName": "versiculo-do-dias",
-    "displayName": "versiculo-do-dia"
+    "displayName": "versiculo-do-dia",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -17,6 +18,9 @@
     "descriptions": {
       "type": "richtext",
       "required": true
+    },
+    "type": {
+      "type": "string"
     }
   }
 }

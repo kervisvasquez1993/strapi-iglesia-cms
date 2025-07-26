@@ -4,7 +4,8 @@
   "info": {
     "singularName": "testemunho",
     "pluralName": "testemunhos",
-    "displayName": "Testemunho"
+    "displayName": "Testemunho",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -18,6 +19,9 @@
     "name": {
       "type": "string",
       "required": true
+    },
+    "type": {
+      "type": "string"
     }
   }
 }

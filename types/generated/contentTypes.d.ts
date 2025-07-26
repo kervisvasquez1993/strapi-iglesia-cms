@@ -976,6 +976,7 @@ export interface ApiTestemunhoTestemunho extends Schema.CollectionType {
     singularName: 'testemunho';
     pluralName: 'testemunhos';
     displayName: 'Testemunho';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -983,6 +984,7 @@ export interface ApiTestemunhoTestemunho extends Schema.CollectionType {
   attributes: {
     description: Attribute.RichText & Attribute.Required;
     name: Attribute.String & Attribute.Required;
+    type: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1007,6 +1009,7 @@ export interface ApiVersiculoDoDiaVersiculoDoDia extends Schema.SingleType {
     singularName: 'versiculo-do-dia';
     pluralName: 'versiculo-do-dias';
     displayName: 'versiculo-do-dia';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -1014,6 +1017,7 @@ export interface ApiVersiculoDoDiaVersiculoDoDia extends Schema.SingleType {
   attributes: {
     name: Attribute.String;
     descriptions: Attribute.RichText & Attribute.Required;
+    type: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
