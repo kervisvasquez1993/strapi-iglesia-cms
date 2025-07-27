@@ -35,6 +35,14 @@
         "videos",
         "audios"
       ]
+    },
+    "imgs": {
+      "allowedTypes": [
+        "images",
+        "videos"
+      ],
+      "type": "media",
+      "multiple": true
     }
   }
 }
