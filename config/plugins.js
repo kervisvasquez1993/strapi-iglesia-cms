@@ -16,7 +16,7 @@ module.exports = ({ env }) => {
           // Deshabilitar ACLs explícitamente
           actionOptions: {
             upload: {
-              ACL: undefined, // Forzar sin ACL
+                 ACL: 'public-read', 
             },
             uploadStream: {
               ACL: undefined,

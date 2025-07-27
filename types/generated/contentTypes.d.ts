@@ -920,7 +920,7 @@ export interface ApiImagenEventoImagenEvento extends Schema.CollectionType {
       'api::evento.evento'
     >;
     titulo: Attribute.String & Attribute.Required;
-    descriptions: Attribute.Blocks;
+    descriptions: Attribute.RichText;
     imagenes: Attribute.Media<'images' | 'files' | 'videos' | 'audios', true>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;

@@ -23,17 +23,18 @@
       "required": true
     },
     "descriptions": {
-      "type": "blocks"
+      "type": "richtext"
     },
     "imagenes": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": true
+      ]
     }
   }
 }
