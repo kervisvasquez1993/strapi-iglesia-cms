@@ -919,10 +919,9 @@ export interface ApiImagenEventoImagenEvento extends Schema.CollectionType {
       'manyToOne',
       'api::evento.evento'
     >;
-    image: Attribute.Media<'images' | 'files' | 'videos' | 'audios'> &
-      Attribute.Required;
     titulo: Attribute.String & Attribute.Required;
     descriptions: Attribute.Blocks;
+    imagenes: Attribute.Media<'images' | 'files' | 'videos' | 'audios', true>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
