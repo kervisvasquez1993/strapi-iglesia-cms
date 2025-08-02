@@ -36,13 +36,13 @@
         "audios"
       ]
     },
-    "imgs": {
-      "allowedTypes": [
-        "images",
-        "videos"
-      ],
+    "videosimple": {
       "type": "media",
-      "multiple": true
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "videos"
+      ]
     }
   }
 }

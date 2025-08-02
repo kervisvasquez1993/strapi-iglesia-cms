@@ -922,7 +922,7 @@ export interface ApiImagenEventoImagenEvento extends Schema.CollectionType {
     titulo: Attribute.String & Attribute.Required;
     descriptions: Attribute.RichText;
     imagenes: Attribute.Media<'images' | 'files' | 'videos' | 'audios', true>;
-    imgs: Attribute.Media<'images' | 'videos', true>;
+    videosimple: Attribute.Media<'videos', true>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
