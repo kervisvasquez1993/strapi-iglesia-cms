@@ -1,0 +1,53 @@
+{
+  "kind": "collectionType",
+  "collectionName": "estudos",
+  "info": {
+    "singularName": "estudo",
+    "pluralName": "estudos",
+    "displayName": "estudo",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "data_inicio": {
+      "type": "datetime"
+    },
+    "status": {
+      "type": "boolean"
+    },
+    "descriptions": {
+      "type": "richtext"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "name"
+    },
+    "rank": {
+      "type": "integer"
+    },
+    "post_estudos": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::post-estudo.post-estudo",
+      "mappedBy": "estudo"
+    }
+  }
+}

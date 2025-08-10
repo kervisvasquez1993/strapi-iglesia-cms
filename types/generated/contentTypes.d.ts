@@ -859,6 +859,48 @@ export interface ApiCategoryCategory extends Schema.CollectionType {
   };
 }
 
+export interface ApiEstudoEstudo extends Schema.CollectionType {
+  collectionName: 'estudos';
+  info: {
+    singularName: 'estudo';
+    pluralName: 'estudos';
+    displayName: 'estudo';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    name: Attribute.String & Attribute.Required;
+    image: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    data_inicio: Attribute.DateTime;
+    status: Attribute.Boolean;
+    descriptions: Attribute.RichText;
+    slug: Attribute.UID<'api::estudo.estudo', 'name'>;
+    rank: Attribute.Integer;
+    post_estudos: Attribute.Relation<
+      'api::estudo.estudo',
+      'oneToMany',
+      'api::post-estudo.post-estudo'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::estudo.estudo',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::estudo.estudo',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiEventoEvento extends Schema.CollectionType {
   collectionName: 'eventos';
   info: {
@@ -958,6 +1000,7 @@ export interface ApiNossaComunidadeNossaComunidade
     image: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     description: Attribute.Blocks;
     rank: Attribute.Integer;
+    slug: Attribute.UID<'api::nossa-comunidade.nossa-comunidade', 'name'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -969,6 +1012,43 @@ export interface ApiNossaComunidadeNossaComunidade
       Attribute.Private;
     updatedBy: Attribute.Relation<
       'api::nossa-comunidade.nossa-comunidade',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiPostEstudoPostEstudo extends Schema.CollectionType {
+  collectionName: 'post_estudos';
+  info: {
+    singularName: 'post-estudo';
+    pluralName: 'post-estudos';
+    displayName: 'post-estudo';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    name: Attribute.String;
+    descriptions: Attribute.RichText;
+    imagem: Attribute.Media<'images' | 'files' | 'videos' | 'audios', true>;
+    estudo: Attribute.Relation<
+      'api::post-estudo.post-estudo',
+      'manyToOne',
+      'api::estudo.estudo'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::post-estudo.post-estudo',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::post-estudo.post-estudo',
       'oneToOne',
       'admin::user'
     > &
@@ -1100,9 +1180,11 @@ declare module '@strapi/types' {
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'api::blog.blog': ApiBlogBlog;
       'api::category.category': ApiCategoryCategory;
+      'api::estudo.estudo': ApiEstudoEstudo;
       'api::evento.evento': ApiEventoEvento;
       'api::imagen-evento.imagen-evento': ApiImagenEventoImagenEvento;
       'api::nossa-comunidade.nossa-comunidade': ApiNossaComunidadeNossaComunidade;
+      'api::post-estudo.post-estudo': ApiPostEstudoPostEstudo;
       'api::sermone.sermone': ApiSermoneSermone;
       'api::testemunho.testemunho': ApiTestemunhoTestemunho;
       'api::versiculo-do-dia.versiculo-do-dia': ApiVersiculoDoDiaVersiculoDoDia;
