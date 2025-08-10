@@ -998,9 +998,9 @@ export interface ApiNossaComunidadeNossaComunidade
   attributes: {
     name: Attribute.String;
     image: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-    description: Attribute.Blocks;
     rank: Attribute.Integer;
     slug: Attribute.UID<'api::nossa-comunidade.nossa-comunidade', 'name'>;
+    description: Attribute.RichText & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

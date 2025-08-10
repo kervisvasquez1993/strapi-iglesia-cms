@@ -26,15 +26,16 @@
         "audios"
       ]
     },
-    "description": {
-      "type": "blocks"
-    },
     "rank": {
       "type": "integer"
     },
     "slug": {
       "type": "uid",
       "targetField": "name"
+    },
+    "description": {
+      "type": "richtext",
+      "required": true
     }
   }
 }
