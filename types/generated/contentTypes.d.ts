@@ -799,20 +799,58 @@ export interface ApiBlogBlog extends Schema.CollectionType {
   options: {
     draftAndPublish: true;
   };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
   attributes: {
-    name: Attribute.String & Attribute.Required;
+    name: Attribute.String &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     slug: Attribute.UID<'api::blog.blog', 'name'>;
-    description: Attribute.Text & Attribute.Required;
+    description: Attribute.Text &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     image: Attribute.Media<'images' | 'files' | 'videos' | 'audios'> &
-      Attribute.Required;
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     category: Attribute.Relation<
       'api::blog.blog',
       'manyToOne',
       'api::category.category'
     >;
-    content: Attribute.RichText;
-    rank: Attribute.Integer & Attribute.Required;
-    repeteablesection: Attribute.Component<'body.section-repeat', true>;
+    content: Attribute.RichText &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    rank: Attribute.Integer &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    repeteablesection: Attribute.Component<'body.section-repeat', true> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -820,6 +858,12 @@ export interface ApiBlogBlog extends Schema.CollectionType {
       Attribute.Private;
     updatedBy: Attribute.Relation<'api::blog.blog', 'oneToOne', 'admin::user'> &
       Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::blog.blog',
+      'oneToMany',
+      'api::blog.blog'
+    >;
+    locale: Attribute.String;
   };
 }
 
@@ -871,14 +915,50 @@ export interface ApiEstudoEstudo extends Schema.CollectionType {
   options: {
     draftAndPublish: true;
   };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
   attributes: {
-    name: Attribute.String & Attribute.Required;
-    image: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-    data_inicio: Attribute.DateTime;
-    status: Attribute.Boolean;
-    descriptions: Attribute.RichText;
+    name: Attribute.String &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    image: Attribute.Media<'images' | 'files' | 'videos' | 'audios'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    data_inicio: Attribute.DateTime &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    status: Attribute.Boolean &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    descriptions: Attribute.RichText &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     slug: Attribute.UID<'api::estudo.estudo', 'name'>;
-    rank: Attribute.Integer;
+    rank: Attribute.Integer &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     post_estudos: Attribute.Relation<
       'api::estudo.estudo',
       'oneToMany',
@@ -899,6 +979,12 @@ export interface ApiEstudoEstudo extends Schema.CollectionType {
       'admin::user'
     > &
       Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::estudo.estudo',
+      'oneToMany',
+      'api::estudo.estudo'
+    >;
+    locale: Attribute.String;
   };
 }
 
@@ -1031,15 +1117,35 @@ export interface ApiPostEstudoPostEstudo extends Schema.CollectionType {
   options: {
     draftAndPublish: true;
   };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
   attributes: {
-    name: Attribute.String;
-    descriptions: Attribute.RichText;
+    name: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    descriptions: Attribute.RichText &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     estudo: Attribute.Relation<
       'api::post-estudo.post-estudo',
       'manyToOne',
       'api::estudo.estudo'
     >;
-    section: Attribute.Component<'body.section-repeat', true>;
+    section: Attribute.Component<'body.section-repeat', true> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1055,6 +1161,12 @@ export interface ApiPostEstudoPostEstudo extends Schema.CollectionType {
       'admin::user'
     > &
       Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::post-estudo.post-estudo',
+      'oneToMany',
+      'api::post-estudo.post-estudo'
+    >;
+    locale: Attribute.String;
   };
 }
 
