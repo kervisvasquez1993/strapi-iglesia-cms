@@ -812,6 +812,7 @@ export interface ApiBlogBlog extends Schema.CollectionType {
     >;
     content: Attribute.RichText;
     rank: Attribute.Integer & Attribute.Required;
+    repeteablesection: Attribute.Component<'body.section-repeat', true>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1025,6 +1026,7 @@ export interface ApiPostEstudoPostEstudo extends Schema.CollectionType {
     singularName: 'post-estudo';
     pluralName: 'post-estudos';
     displayName: 'post-estudo';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -1032,12 +1034,12 @@ export interface ApiPostEstudoPostEstudo extends Schema.CollectionType {
   attributes: {
     name: Attribute.String;
     descriptions: Attribute.RichText;
-    imagem: Attribute.Media<'images' | 'files' | 'videos' | 'audios', true>;
     estudo: Attribute.Relation<
       'api::post-estudo.post-estudo',
       'manyToOne',
       'api::estudo.estudo'
     >;
+    section: Attribute.Component<'body.section-repeat', true>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

@@ -4,7 +4,8 @@
   "info": {
     "singularName": "post-estudo",
     "pluralName": "post-estudos",
-    "displayName": "post-estudo"
+    "displayName": "post-estudo",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -17,21 +18,16 @@
     "descriptions": {
       "type": "richtext"
     },
-    "imagem": {
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ],
-      "type": "media",
-      "multiple": true
-    },
     "estudo": {
       "type": "relation",
       "relation": "manyToOne",
       "target": "api::estudo.estudo",
       "inversedBy": "post_estudos"
+    },
+    "section": {
+      "type": "component",
+      "repeatable": true,
+      "component": "body.section-repeat"
     }
   }
 }

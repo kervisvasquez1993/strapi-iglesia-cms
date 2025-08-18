@@ -47,6 +47,11 @@
     "rank": {
       "type": "integer",
       "required": true
+    },
+    "repeteablesection": {
+      "type": "component",
+      "repeatable": true,
+      "component": "body.section-repeat"
     }
   }
 }
