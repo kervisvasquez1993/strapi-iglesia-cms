@@ -16,7 +16,7 @@ module.exports = ({ env }) => {
           // Deshabilitar ACLs explícitamente
           actionOptions: {
             upload: {
-                 ACL: 'public-read', 
+              ACL: "public-read",
             },
             uploadStream: {
               ACL: undefined,
@@ -28,6 +28,7 @@ module.exports = ({ env }) => {
     "drag-drop-content-types": {
       enabled: true,
     },
+   
     graphql: {
       enabled: true,
       config: {
