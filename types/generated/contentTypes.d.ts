@@ -1241,7 +1241,7 @@ export interface ApiTestemunhoTestemunho extends Schema.CollectionType {
   };
 }
 
-export interface ApiVersiculoDoDiaVersiculoDoDia extends Schema.SingleType {
+export interface ApiVersiculoDoDiaVersiculoDoDia extends Schema.CollectionType {
   collectionName: 'versiculo_do_dias';
   info: {
     singularName: 'versiculo-do-dia';
