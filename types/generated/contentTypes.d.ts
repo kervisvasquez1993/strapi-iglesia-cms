@@ -1070,6 +1070,41 @@ export interface ApiImagenEventoImagenEvento extends Schema.CollectionType {
   };
 }
 
+export interface ApiMisioneroMisionero extends Schema.CollectionType {
+  collectionName: 'misioneros';
+  info: {
+    singularName: 'misionero';
+    pluralName: 'misioneros';
+    displayName: 'misionero';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String;
+    Descriptions: Attribute.RichText;
+    file: Attribute.Media<'images' | 'files' | 'videos' | 'audios', true>;
+    slug: Attribute.UID<'api::misionero.misionero', 'title'>;
+    imagen: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::misionero.misionero',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::misionero.misionero',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiNossaComunidadeNossaComunidade
   extends Schema.CollectionType {
   collectionName: 'nossa_comunidades';
@@ -1297,6 +1332,7 @@ declare module '@strapi/types' {
       'api::estudo.estudo': ApiEstudoEstudo;
       'api::evento.evento': ApiEventoEvento;
       'api::imagen-evento.imagen-evento': ApiImagenEventoImagenEvento;
+      'api::misionero.misionero': ApiMisioneroMisionero;
       'api::nossa-comunidade.nossa-comunidade': ApiNossaComunidadeNossaComunidade;
       'api::post-estudo.post-estudo': ApiPostEstudoPostEstudo;
       'api::sermone.sermone': ApiSermoneSermone;
