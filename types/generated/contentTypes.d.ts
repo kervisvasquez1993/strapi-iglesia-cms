@@ -1221,10 +1221,12 @@ export interface ApiSermoneSermone extends Schema.CollectionType {
     url_youtube: Attribute.String;
     url_facebook: Attribute.String;
     type: Attribute.Enumeration<['facebook', 'youtube']> &
-      Attribute.Required &
       Attribute.DefaultTo<'facebook'>;
     activo: Attribute.Boolean & Attribute.Required & Attribute.DefaultTo<true>;
     contents: Attribute.RichText & Attribute.Required;
+    pregador: Attribute.String;
+    conclusoes: Attribute.Text;
+    slug: Attribute.UID<'api::sermone.sermone', 'titulo'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

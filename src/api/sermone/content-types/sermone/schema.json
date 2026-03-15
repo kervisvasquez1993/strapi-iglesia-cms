@@ -28,7 +28,7 @@
         "youtube"
       ],
       "default": "facebook",
-      "required": true
+      "required": false
     },
     "activo": {
       "type": "boolean",
@@ -38,6 +38,16 @@
     "contents": {
       "type": "richtext",
       "required": true
+    },
+    "pregador": {
+      "type": "string"
+    },
+    "conclusoes": {
+      "type": "text"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "titulo"
     }
   }
 }
