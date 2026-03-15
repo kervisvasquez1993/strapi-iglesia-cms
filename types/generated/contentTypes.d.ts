@@ -1220,7 +1220,22 @@ export interface ApiSermoneSermone extends Schema.CollectionType {
     titulo: Attribute.String;
     url_youtube: Attribute.String;
     url_facebook: Attribute.String;
-    type: Attribute.Enumeration<['facebook', 'youtube']> &
+    type: Attribute.Enumeration<
+      [
+        'facebook',
+        'youtube',
+        'dominical',
+        'estudo_biblico',
+        'devocional',
+        'culto_oracao',
+        'predicacao',
+        'conferencia',
+        'seminario',
+        'culto_jovens',
+        'escola_biblica',
+        'testemunho'
+      ]
+    > &
       Attribute.DefaultTo<'facebook'>;
     activo: Attribute.Boolean & Attribute.Required & Attribute.DefaultTo<true>;
     contents: Attribute.RichText & Attribute.Required;

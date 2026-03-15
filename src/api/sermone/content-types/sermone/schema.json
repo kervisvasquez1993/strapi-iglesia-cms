@@ -25,7 +25,17 @@
       "type": "enumeration",
       "enum": [
         "facebook",
-        "youtube"
+        "youtube",
+        "dominical",
+        "estudo_biblico",
+        "devocional",
+        "culto_oracao",
+        "predicacao",
+        "conferencia",
+        "seminario",
+        "culto_jovens",
+        "escola_biblica",
+        "testemunho"
       ],
       "default": "facebook",
       "required": false
